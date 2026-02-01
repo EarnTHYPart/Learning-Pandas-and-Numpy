@@ -129,4 +129,3 @@ This project is open source and available for educational use.
 
 ---
 
-**Excellent Job!** You have completed the Python 101 tutorial on NumPy and Pandas. Continue practicing and exploring these powerful libraries.
