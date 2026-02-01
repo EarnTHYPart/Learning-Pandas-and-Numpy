@@ -1,111 +1,87 @@
 #!/usr/bin/env python
-# coding: utf-8
+# -*- coding: utf-8 -*-
+"""
+Python 101: Python Libraries for Data Analysis - NumPy and Pandas
+==================================================================
 
-# # TASK #1: DEFINE SINGLE AND MULTI-DIMENSIONAL  NUMPY ARRAYS
+This tutorial covers fundamental concepts and operations for:
+- NumPy: Linear algebra library for multidimensional arrays
+- Pandas: Data manipulation and analysis tool built on NumPy
 
-# In[1]:
+Author: Learning Pandas and Numpy
+Date: 2026
+"""
 
+import numpy as np
+import pandas as pd
 
+# TASK #1: DEFINE SINGLE AND MULTI-DIMENSIONAL NUMPY ARRAYS
 # NumPy is a Linear Algebra Library used for multidimensional arrays
-# NumPy brings the best of two worlds: (1) C/Fortran computational efficiency, (2) Python language easy syntax 
+# NumPy brings the best of two worlds: (1) C/Fortran computational efficiency,
+# (2) Python language easy syntax
 
-# Let's define a one-dimensional array 
-
-
-# In[2]:
-
-
-# Let's create a numpy array from the list "my_list"
-
-
-# In[3]:
+# Define a one-dimensional array
+my_list = [1, 2, 3, 4, 5]
+arr_1d = np.array(my_list)
+print("1D Array:", arr_1d)
 
 
 
+# Multi-dimensional array (Matrix definition)
+arr_2d = np.array([[1, 2, 3, 4], [5, 6, 7, 8]])
+print("2D Array:\n", arr_2d)
+
+# MINI CHALLENGE #1:
+# - Write a code that creates the following 2x4 numpy array:
+# [[3 7 9 3]
+#  [4 3 2 2]]
+# TODO: Write your solution below
 
 
-# In[4]:
+# TASK #2: LEVERAGE NUMPY BUILT-IN METHODS AND FUNCTIONS
 
+# Uniform distribution between 0 and 1 using rand()
+rand_array = np.random.rand(3, 3)
+print("Random array with rand():\n", rand_array)
 
-# Multi-dimensional (Matrix definition) 
+# Create a matrix of random numbers
+rand_matrix = np.random.rand(2, 4)
+print("Random matrix:\n", rand_matrix)
 
+# Generate random integers between upper and lower bounds using randint()
+rand_integers = np.random.randint(1, 10, size=5)
+print("Random integers:", rand_integers)
 
-# MINI CHALLENGE #1: 
-# - Write a code that creates the following 2x4 numpy array
-# 
-# ```
-# [[3 7 9 3] 
-# [4 3 2 2]]
-# ```
+# Generate a specific number of random integers
+rand_integers_array = np.random.randint(1, 100, 10)
+print("Array of random integers:", rand_integers_array)
 
-# In[ ]:
+# Create evenly spaced values using arange()
+arange_array = np.arange(0, 10, 2)
+print("Array with arange():", arange_array)
 
-
-
-
-
-# # TASK #2: LEVERAGE NUMPY BUILT-IN METHODS AND FUNCTIONS 
-
-# In[6]:
-
-
-# "rand()" uniform distribution between 0 and 1
-
-
-# In[7]:
-
-
-# you can create a matrix of random number as well
-
-
-# In[9]:
-
-
-# "randint" is used to generate random integers between upper and lower bounds
-
-
-# In[10]:
-
-
-# "randint" can be used to generate a certain number of random itegers as follows
-
-
-# In[11]:
-
-
-# np.arange creates an evenly spaced values within a given interval
-
-
-# In[12]:
-
-
-# create a diagonal of ones and zeros everywhere else
-
-
-# In[13]:
-
+# Create identity matrix (diagonal of ones, zeros everywhere else)
+identity = np.eye(3)
+print("Identity matrix:\n", identity)
 
 # Matrix of ones
-
-
-# In[14]:
-
+ones_matrix = np.ones((3, 3))
+print("Matrix of ones:\n", ones_matrix)
 
 # Array of zeros
-
+zeros_array = np.zeros(5)
+print("Array of zeros:", zeros_array)
 
 # MINI CHALLENGE #2:
-# - Write a code that takes in a positive integer "x" from the user and creates a 1x10 array with random numbers ranging from 0 to "x"
-
-# In[ ]:
-
-
+# - Write a code that takes in a positive integer "x" from the user
+#   and creates a 1x10 array with random numbers ranging from 0 to "x"
+# TODO: Write your solution below
 
 
 
-# # TASK #3: PERFORM MATHEMATICAL OPERATIONS IN NUMPY
 
-# In[16]:
+
+# TASK #3: PERFORM MATHEMATICAL OPERATIONS IN NUMPY
 
 
 # np.arange() returns an evenly spaced values within a given interval
@@ -155,9 +131,7 @@
 
 
 
-# # TASK #4: PERFORM ARRAYS SLICING AND INDEXING 
-
-# In[26]:
+# TASK #4: PERFORM ARRAY SLICING AND INDEXING
 
 
 
@@ -218,9 +192,7 @@
 
 
 
-# # TASK #5: PERFORM ELEMENTS SELECTION (CONDITIONAL)
-
-# In[42]:
+# TASK #5: PERFORM ELEMENTS SELECTION (CONDITIONAL)
 
 
 
@@ -257,9 +229,7 @@
 
 
 
-# # TASK #6: UNDERSTAND PANDAS FUNDAMENTALS
-
-# In[ ]:
+# TASK #6: UNDERSTAND PANDAS FUNDAMENTALS
 
 
 # Pandas is a data manipulation and analysis tool that is built on Numpy.
@@ -309,9 +279,7 @@
 
 
 
-# # TASK #7: PANDAS WITH CSV AND HTML DATA
-
-# In[62]:
+# TASK #7: PANDAS WITH CSV AND HTML DATA
 
 
 # Pandas is used to read a csv file and store data in a DataFrame
@@ -351,9 +319,7 @@
 
 
 
-# # TASK #8: PANDAS OPERATIONS
-
-# In[67]:
+# TASK #8: PANDAS OPERATIONS
 
 
 # Let's define a dataframe as follows:
@@ -381,9 +347,7 @@
 
 
 
-# # TASK #9: PANDAS WITH FUNCTIONS
-
-# In[71]:
+# TASK #9: PANDAS WITH FUNCTIONS
 
 
 # Let's define a dataframe as follows:
@@ -423,9 +387,7 @@ bank_client_df
 
 
 
-# # TASK #10: PERFORM SORTING AND ORDERING IN PANDAS
-
-# In[80]:
+# TASK #10: PERFORM SORTING AND ORDERING IN PANDAS
 
 
 # Let's define a dataframe as follows:
@@ -460,9 +422,7 @@ bank_client_df
 # Note that now the change (ordering) took place 
 
 
-# # TASK #11: PERFORM CONCATENATING AND MERGING WITH PANDAS
-
-# In[90]:
+# TASK #11: PERFORM CONCATENATING AND MERGING WITH PANDAS
 
 
 # Check this out: https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html
@@ -510,9 +470,7 @@ bank_client_df
 
 
 
-# # TASK #12: PROJECT AND CONCLUDING REMARKS
-
-# - Define a dataframe named 'Bank_df_1' that contains the first and last names for 5 bank clients with IDs = 1, 2, 3, 4, 5 
+# TASK #12: PROJECT AND CONCLUDING REMARKS named 'Bank_df_1' that contains the first and last names for 5 bank clients with IDs = 1, 2, 3, 4, 5 
 # - Assume that the bank got 5 new clients, define another dataframe named 'Bank_df_2' that contains a new clients with IDs = 6, 7, 8, 9, 10
 # - Let's assume we obtained additional information (Annual Salary) about all our bank customers (10 customers) 
 # - Concatenate both 'bank_df_1' and 'bank_df_2' dataframes
